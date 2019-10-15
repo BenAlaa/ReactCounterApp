@@ -15,7 +15,6 @@ class Counter extends Component {
   //   if (prevProps.counter.value !== this.props.counter.value) {
   //     // Ajax call and get new data from the server
   //   }
-
   // }
 
   // componentWillUnmount(){
@@ -55,6 +54,12 @@ class Counter extends Component {
     );
   }
 
+  getBadgeClasses(){
+    const { value } = this.props.counter;
+    let classes = "badge m-2 badge-";
+    classes += (value === 0)?"warning" : "primary";
+    return classes;
+  }
   formatCount() {
     const { value } = this.props.counter;
     return value === 0 ? "Zero" : value;
